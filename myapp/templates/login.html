@@ -1,0 +1,54 @@
+{% load static %}<br><br><br>
+<link rel="stylesheet" href="{% static 'loginimg.css' %}">
+<body>
+<center>
+ <font color=red> Welcome</font>
+ <br><br><br>
+ <form action='Profile' method=POST>
+  {% csrf_token %}
+  Email&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type='email' name='uemail' placeholder='Email' 	required>
+  <br><br>
+  Password &nbsp<input type='password' name='upassword' placeholder='Password' required><br><br>
+  <input type='submit' name='signin' value='Signin'>
+   
+ </form>
+
+ <a href='ForgotPassword'>ForgotPassword</a>
+  <br><br> 
+ <a href='Register'>Register</a>
+</center>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

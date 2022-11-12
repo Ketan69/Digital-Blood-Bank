@@ -1,0 +1,341 @@
+{% load static %}
+<a href="/RaktKosh/Profile">back</a>
+{% if b %}
+<center>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}" />
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style-min.css' %}">
+    <title>RaktKosh</title>
+</head>
+
+
+<!--Navbar -->
+    <nav class="navbar navbar-expand-lg bg-danger">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="/RaktKosh/Profile"><font size=6 color=black><B>RaktKosh</B></font></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/RaktKosh/Profile"><font size=4 color=black><b>Profile</b></font></a>
+        </li>&nbsp&nbsp&nbsp&nbsp
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+             <label for="materialRegisterFormFirstName"><font size=4 color=black><b>Find Blood</b></font></label>
+            </a>
+           <div class="dropdown-menu dropdown-menu-right dropdown-default"
+             aria-labelledby="navbarDropdownMenuLink-333" style="background-color:#ff6600;">
+             <a class="dropdown-item" href="/RaktKosh/Profile/FindDonor"><b>Find a Donor</b></a>
+             <a class="dropdown-item" href="/RaktKosh/Profile/FindNearestBloodBank"><b>Find Nearest Blood Bank</b></a>
+           </div>
+         </li>&nbsp&nbsp&nbsp&nbsp
+        <li class="nav-item">
+          <a class="nav-link" href="/RaktKosh/Profile/BloodRequest"><font size=4 color=black><b>Post Blood Request</b></font></a>
+        </li>&nbsp&nbsp&nbsp&nbsp
+        <li class="nav-item">
+          <a class="nav-link" href="/RaktKosh"><font size=4 color=black><b>Logout</b></font></a>
+        </li>
+      </ul>	
+    </div>
+  </div>
+</nav><br
+    <!--/.Navbar -->
+
+<body>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <!-- Material form register -->
+                <div class="card">
+
+                    <h5 class="card-header danger-color white-text text-center py-4">
+                        <strong>Find a Donor</strong>
+                    </h5>
+
+                    <!--Card content-->
+                    <div class="card-body px-lg-5 pt-0">
+
+                        <!-- Form -->
+                        <form class="text-center" action="/RaktKosh/Profile/FindDonor" method=POST>
+                        {% csrf_token %}
+ 
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <input name="bloodgroup" type="text" id="materialRegisterFormFirstName" class="form-control" required>
+                                        <label for="materialRegisterFormFirstName">Blood Group</label>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <input name="country" type="text" value="India" id="materialRegisterFormFirstName" class="form-control" readonly required>
+                                    </div>
+                                </div>  
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <input name="state" type="text" id="materialRegisterFormFirstName" class="form-control" required>
+                                        <label for="materialRegisterFormFirstName">State</label>
+                                    </div>
+                                </div>  
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <input name="district" type="text" id="materialRegisterFormFirstName" class="form-control" required>
+                                        <label for="materialRegisterFormFirstName">District</label>
+                                    </div>
+                                </div>  
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <input name="city" type="text" id="materialRegisterFormFirstName" class="form-control" required>
+                                        <label for="materialRegisterFormFirstName">City</label>
+                                    </div>
+                                </div>  
+                            </div>
+                        
+                            <!-- Sign up button -->
+                            <button class="btn btn-danger btn-rounded btn-block my-4 waves-effect z-depth-0"
+                               name="search" type="submit">Search</button>
+
+                        </form>
+                        <!-- Form -->
+                    
+                    </div>
+
+                </div>
+                <!-- Material form register -->
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+{% else %}
+
+<center>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}" />
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style-min.css' %}">
+    <title>RaktKosh</title>
+</head>
+
+<body>
+
+<!--Navbar -->
+    <nav class="navbar navbar-expand-lg bg-danger">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="/RaktKosh/Profile"><font size=6 color=black><B>RaktKosh</B></font></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/RaktKosh/Profile"><font size=4 color=black><b>Profile</b></font></a>
+        </li>&nbsp&nbsp&nbsp&nbsp
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <font size=4 color=black><b>Find Blood</b></font>
+          </a>
+         <div> 
+          <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#ff6600;">
+            <li><a class="dropdown-item" href="RaktKosh/Profile/FindDonor"><font size=4 color=black><b>Find a Donor</b></font></a></li>
+            <li><a class="dropdown-item" href="RaktKosh/Profile/FindNearestBloodBank"><font size=4 color=black><B>Find nearest Blood Bank</B></font></a></li>
+          </ul>
+         </div> 
+        </li>&nbsp&nbsp&nbsp&nbsp
+        <li class="nav-item">
+          <a class="nav-link" href="/RaktKosh/Profile/BloodRequest"><font size=4 color=black><B>Post Blood Request</B></font></a>
+        </li>&nbsp&nbsp&nbsp&nbsp
+        <li class="nav-item">
+          <a class="nav-link" href="/RaktKosh"><font size=4 color=black><B>Logout</B></font></a>
+        </li>
+      </ul>	
+    </div>
+  </div>
+</nav><br
+    <!--/.Navbar -->
+	
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <!-- Material form register -->
+                <div class="card">
+
+                    <h5 class="card-header danger-color white-text text-center py-4">
+                        <strong>Find a Donor</strong>
+                    </h5>
+
+                    <!--Card content-->
+                    <div class="card-body px-lg-5 pt-0">
+
+                        <!-- Form -->
+                        <form class="text-center" action="/RaktKosh/Profile/FindDonor" method=POST>
+                        {% csrf_token %}
+ 
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <input name="bloodgroup" type="text" value="{{bloodgroup}}" id="materialRegisterFormFirstName" class="form-control" required>
+                                        <label for="materialRegisterFormFirstName">Blood Group</label>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <input name="country" type="text" value="India" id="materialRegisterFormFirstName" class="form-control" readonly required>
+                                    </div>
+                                </div>  
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <input name="state" type="text" value="{{state}}" id="materialRegisterFormFirstName" class="form-control" required>
+                                        <label for="materialRegisterFormFirstName">State</label>
+                                    </div>
+                                </div>  
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <input name="district" type="text" value="{{district}}" id="materialRegisterFormFirstName" class="form-control" required>
+                                        <label for="materialRegisterFormFirstName">District</label>
+                                    </div>
+                                </div>  
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <input name="city" type="text" value="{{city}}" id="materialRegisterFormFirstName" class="form-control" required>
+                                        <label for="materialRegisterFormFirstName">City</label>
+                                    </div>
+                                </div>  
+                            </div>
+                        
+                            <!-- Sign up button -->
+                            <button class="btn btn-danger btn-rounded btn-block my-4 waves-effect z-depth-0"
+                               name="search" type="submit">Search</button>
+
+                        </form>
+                        <!-- Form -->
+                 
+                    </div>
+
+                </div>
+                <!-- Material form register -->
+            </div>
+        </div>
+    </div>
+
+<br><br><br><br>
+
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+     
+    th,
+    td {
+        padding: 5px;
+        text-align: left;
+    }
+     
+    table#t01 {
+        width: 100%;
+        background-color: #f2f2d1;
+    }
+    </style>
+
+<table id="t01">
+ <tr>
+  <td><font size=6 color=RED>NAME</font></td>
+  <td><font size=6 color=RED>NUMBER</font></td>
+  <td><font size=6 color=RED>ADDRESS</font></td>
+  <td><font size=6 color=RED>STATE</font></td>
+  <td><font size=6 color=RED>CITY</font></td> 
+ </tr>
+
+{% for x in l %}
+ <tr>
+  <td><font size=5 color=black>{{x.name}}</font></td>
+  <td><font size=5 color=black>{{x.phone}}</font></td>
+  <td><font size=5 color=black>{{x.email}}</font></td>
+  <td><font size=5 color=black>{{x.address}}</font></td>
+  <td><font size=5 color=black>{{x.state}}</font></td>
+  <td><font size=5 color=black>{{x.city}}</font></td> 
+ </tr>
+{% empty %}
+  <font size=6>NO DATA AVAILABLE</font><br>
+{% endfor %}
+</table>
+<br><br><br><br>
+
+</body>
+
+
+{% endif %}

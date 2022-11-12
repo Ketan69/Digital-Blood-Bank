@@ -1,0 +1,140 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+<nav class="navbar navbar-expand-lg bg-danger">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="Profile"><font size=6 color=black><B>RaktKosh</B></font></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="Profile"><font size=4 color=black>Profile</font></a>
+        </li>&nbsp&nbsp&nbsp&nbsp
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <font size=4 color=black>Find Blood</font>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" style="background-color:#ff6600;">
+            <li><a class="dropdown-item" href="Profile/FindDonor"><font size=4 color=black>Find a Donor</font></a></li>
+            <li><a class="dropdown-item" href="Profile/FindNearestBloodBank"><font size=4 color=black>Find nearest Blood Bank</font></a></li>
+          </ul>
+        </li>&nbsp&nbsp&nbsp&nbsp
+        <li class="nav-item">
+          <a class="nav-link" href="Profile/BloodRequest"><font size=4 color=black>Post Blood Request</font></a>
+        </li>&nbsp&nbsp&nbsp&nbsp
+        <li class="nav-item">
+          <a class="nav-link" href="/RaktKosh"><font size=4 color=black>Logout</font></a>
+        </li>
+      </ul>	
+    </div>
+  </div>
+</nav><br><br>
+
+<center>
+<style>
+        input,
+        select {
+            width: 300px;
+            height: 30px;
+            margin: 2px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+</style>
+
+<font size=4 color=Red><B>
+<form action="Profile/Update" method=POST>
+{% csrf_token %}
+
+<label class="form-label">Full Name</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+<input type="text" name="name" value="{{l.name}}" required><br>
+
+<label class="form-label">Age</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	  
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="number" name="age" min="21" value="{{l.age}}" required><br>
+
+<label class="form-label">Blood Group</label>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<select name="bloodgroup" required>
+        <option value="{{l.bloodgroup}}">{{l.bloodgroup}}</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="A1+">A1+</option>
+        <option value="A1-">A1-</option>
+        <option value="A1B+">A1B+</option>
+        <option value="A1B-">A1B-</option>
+        <option value="A2+">A2+</option>
+        <option value="A2-">A2-</option>
+        <option value="A2B+">A2B+</option>
+        <option value="A2B-">A2B-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+</select><br>
+
+<label class="form-label">Gender</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<select name="gender" required>
+        <option value="{{l.gender}}">{{l.gender}}</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+</select><br>
+
+<label class="form-label">Father Name</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+<input type="text" name="fathername" value="{{l.father_name}}" required><br>
+
+<label class="form-label">Email</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="email" name="email" value="{{l.email}}" readonly required	><br>
+
+<label class="form-label">Mobile No</label>&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+<input type="number" name="number" value="{{l.phone}}" min="1000000000" required><br>
+
+<label class="form-label">State</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="text" name="state" value="{{l.state}}" required><br>
+
+<label class="form-label">District</label>&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="text" name="district" value="{{l.district}}" required><br>
+
+<label class="form-label">City</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+<input type="text" name="city" value="{{l.city}}" required><br>
+
+<label class="form-label">PinCode</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+<input type="text" name="pincode" value="{{l.pincode}}" required><br>
+
+<label class="form-label">Address</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+<input type="text" name="address" value="{{l.address}}"><br>
+
+<label class="form-label">Availability to</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  
+<select name="confirm" required>
+        <option value="{{l.confirm}}">{{l.confirm}}</option>
+        <option value="Yes">Yes</option>
+        <option value="No">NO</option>
+</select><br>
+<label class="form-label">Donate Blood</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ <br>
+
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+  <label class="form-check-label" for="flexCheckChecked">
+    Agree to Proceed
+  </label>
+</div>
+
+<input type='hidden' name='password' value='{{l.password}}'>
+<br><br>
+
+<button type="submit" class="btn btn-danger">Update</button>
+</form></B></font>
+</center>
+

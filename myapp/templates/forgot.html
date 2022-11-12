@@ -1,0 +1,86 @@
+<a href=/RaktKosh>back</a>
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}" />
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style-min.css' %}">
+    <title>RaktKosh</title>
+</head>
+
+<body>
+<center>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <!-- Material form register -->
+                <div class="card">
+
+                    <h5 class="card-header danger-color white-text text-center py-4">
+                        <strong>Verification</strong>
+                    </h5>
+
+                    <!--Card content-->
+                    <div class="card-body px-lg-5 pt-0">
+
+                        <!-- Form -->
+                        <form class="text-center" style="color: #757575;" action="_Forgot" method=POST>
+                        {% csrf_token %}
+ 
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <input name="uemail" type="email" id="materialRegisterFormFirstName" class="form-control" required>
+                                        <label for="materialRegisterFormFirstName">Enter E-mail</label>
+                                    </div>
+                                </div>
+                            </div>
+
+  <input type='hidden' name='votp' value='{{otp}}'>
+  <input type='hidden' name='name' value='{{name}}'>
+  <input type='hidden' name='age' value='{{age}}'>
+  <input type='hidden' name='gender' value='{{gender}}'>
+  <input type='hidden' name='fathername' value='{{fathername}}'>
+  <input type='hidden' name='state' value='{{state}}'>
+  <input type='hidden' name='district' value='{{district}}'>
+  <input type='hidden' name='pincode' value='{{pincode}}'>
+  <input type='hidden' name='address' value='{{address}}'>
+  <input type='hidden' name='email' value='{{email}}'>
+  <input type='hidden' name='password' value='{{password}}'>
+  <input type='hidden' name='number' value='{{number}}'>
+  <input type='hidden' name='bloodgroup' value='{{bloodgroup}}'>
+  <input type='hidden' name='confirm' value='{{confirm}}'>
+
+                        
+                            <!-- Sign up button -->
+                            <button class="btn btn-danger btn-rounded btn-block my-4 waves-effect z-depth-0"
+                                type="submit">Submit</button>
+
+ </form>
+                       
+</center>
+</body>
+
+
+

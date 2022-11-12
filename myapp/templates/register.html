@@ -1,0 +1,254 @@
+{% load static %}
+<a href="/RaktKosh">back</a>
+<center>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}" />
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style-min.css' %}">
+    <title>RaktKosh</title>
+</head>
+
+<body>
+
+<!--Navbar -->
+    <nav class="mb-1 navbar navbar-expand-lg navbar-light danger-color">
+        <a class="navbar-brand" href="/RaktKosh"><font size=6><B>RaktKosh</B></font></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+            aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/RaktKosh">Home</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <label for="materialRegisterFormFirstName">Find Blood</label>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                        aria-labelledby="navbarDropdownMenuLink-333">
+                        <a class="dropdown-item" href="/RaktKosh/FindDonor">Find a Donor</a>
+                        <a class="dropdown-item" href="/RaktKosh/FindNearestBloodBank">Find Nearest Blood Bank</a>
+                    </div>
+                </li>   
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/RaktKosh">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light">
+                        <i class="fab fa-google-plus-g"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <label for="materialRegisterFormFirstName"></label>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-default"
+                        aria-labelledby="navbarDropdownMenuLink-333">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--/.Navbar -->
+
+
+
+
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <!-- Material form register -->
+                <div class="card">
+
+                    <h5 class="card-header danger-color white-text text-center py-4">
+                        <strong>REGISTRATION</strong>
+                    </h5>
+
+                    <!--Card content-->
+                    <div class="card-body px-lg-5 pt-0">
+
+                        <!-- Form -->
+                        <form class="text-center" style="color: #757575;" action="/RaktKosh/Register/SignUp" method=POST>
+                        {% csrf_token %}
+ 
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <input name="name" type="text" id="materialRegisterFormFirstName" class="form-control" required>
+                                        <label for="materialRegisterFormFirstName">Full Name</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="md-form">
+                                        <input name="age" type="number" min="21" max="50" id="materialRegisterFormFirstName" class="form-control">
+                                        <label for="materialRegisterFormFirstName">Age</label>
+                                    </div>
+                                </div> 
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <label for="materialRegisterFormFirstName">Blood Group</label>
+                                        <input name="bloodgroup" type="text" id="materialRegisterFormFirstName" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="md-form">
+                                        <label for="materialRegisterFormFirstName">Gender</label>
+                                        <input name="gender" type="text" id="materialRegisterFormFirstName" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <label for="materialRegisterFormFirstName">Father Name</label>
+                                        <input name="fathername" type="text" id="materialRegisterFormFirstName" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="md-form">
+                                        <label for="materialRegisterFormFirstName">E-Mail</label>
+                                        <input name="email" type="email" id="materialRegisterFormFirstName" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <label for="materialRegisterFormFirstName">Mobile No</label>
+                                        <input name="number" type="number" min="1000000000" max="9999999999" id="materialRegisterFormFirstName" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="md-form">
+                                        <label for="materialRegisterFormFirstName">State</label>
+                                        <input name="state" type="text" id="materialRegisterFormFirstName" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <label for="materialRegisterFormFirstName">District</label>
+                                        <input name="district" type="text" id="materialRegisterFormFirstName" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="md-form">
+                                        <label for="materialRegisterFormFirstName">City</label>
+                                        <input name="city" type="text" id="materialRegisterFormFirstName" class="form-control" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <label for="materialRegisterFormFirstName">PinCode</label>
+                                        <input name="pincode" type="number" id="materialRegisterFormFirstName" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="md-form">
+                                        <label for="materialRegisterFormFirstName">Address</label>
+                                        <input name="address" type="text" id="materialRegisterFormFirstName" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+ 
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <label for="materialRegisterFormFirstName">Password</label>
+                                        <input name="password" type="password" id="materialRegisterFormFirstName" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="md-form">
+                                        <label for="materialRegisterFormFirstName">Re-Enter Password</label>
+                                        <input name="rpassword" type="password" id="materialRegisterFormFirstName" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <label for="materialRegisterFormFirstName">Availability to Donate Blood [Yes|No]</label>
+                                        <input name="confirm" type="text" min="1000000000" max="9999999999" id="materialRegisterFormFirstName" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+  
+                            <ul class="form-check">
+ <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+ <label class="form-check-label" for="invalidCheck">
+   Agree to terms and conditions
+ </label>
+</ul>
+
+                        
+                            <!-- Sign up button -->
+                            <button class="btn btn-danger btn-rounded btn-block my-4 waves-effect z-depth-0"
+                                type="submit">SignIn</button>
+
+                        </form>
+                        <!-- Form -->
+
+                    </div>
+
+                </div>
+                <!-- Material form register -->
+            </div>
+        </div>
+    </div>
+
+</body>
